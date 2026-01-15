@@ -39,9 +39,18 @@ public class P07_D_D_Parity_Check {
 
         // Error detection
         boolean error = false;
-        for (int i = 0; i <= r; i++)
-            for (int j = 0; j <= c; j++)
-                if (data[i][j] != 0) error = true;
+
+        // Check row parity bits (last column)
+        for (int i = 0; i < r; i++)
+            if (data[i][c] != 0) error = true;
+
+        // Check column parity bits (last row)
+        for (int j = 0; j < c; j++)
+            if (data[r][j] != 0) error = true;
+
+        // Check block parity bit
+        if (data[r][c] != 0) error = true;
+
 
         if (error)
             System.out.println("Error Detected (Multiple Parity Check)");
