@@ -1,0 +1,58 @@
+P08_Dijkstra_Algo 
+0 -> 0
+1 -> 10
+2 -> 50
+3 -> 30
+4 -> 60
+
+P09_File_Server_TCP 
+Server started
+Client connected
+P09_File_Client_TCP 
+Enter file name: test.txt
+Hello World!
+
+P10_Leaky_Bucket 
+Bucket size: 10
+Output rate: 4
+Packets: 3
+Packet size: 4
+Bucket content: 4
+After leak: 0
+Packet size: 5
+Bucket content: 5
+After leak: 1
+Packet size: 2
+Bucket content: 3
+After leak: 0
+
+P11_Token_Bucket 
+Bucket capacity: 10
+Token rate: 4
+Packet size: 3
+Packet sent
+Tokens left: 1
+Packet size: 4
+Packet sent
+Tokens left: 1
+Packet size: 2
+Packet sent
+Tokens left: 3
+Packet size: 1
+Packet sent
+Tokens left: 6
+Packet size: 3
+Packet sent
+Tokens left: 7
+
+P12_UDP_Server_TCP 
+Message from client: Hello Server
+
+P13_Token_Passing 
+Enter number of processes: 3
+Enter sender process: 2
+Enter receiver process: 1
+Token passing:
+Token passed from 2 to 0
+Token passed from 0 to 1
+Receiver 1 received the token
