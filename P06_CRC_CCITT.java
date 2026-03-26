@@ -15,17 +15,20 @@ public class P06_CRC_CCITT {
 
     // Function to compute CRC-CCITT remainder (sender side)
     static String calCRC(String data, String divs) {
-        int k = divs.length();
-        String temp = data.substring(0, k);
+        int divLen = divs.length();
+        String zeros = "0".repeat(divLen);
 
-        for (int i = k; i < data.length(); i++) {
-            if (temp.charAt(0) == '1')
-                temp = xor(divs, temp) + data.charAt(i);
-            else
-                temp = xor("0".repeat(k), temp) + data.charAt(i);
+        String temp = data.substring(0, divLen);
+
+        for (int i = divLen; i < data.length(); i++) {
+            temp = (temp.charAt(0) == '1')
+                    ? xor(divs, temp) + data.charAt(i)
+                    : xor(zeros, temp) + data.charAt(i);
         }
 
-        return (temp.charAt(0) == '1') ? xor(divs, temp) : xor("0".repeat(k), temp);
+        return (temp.charAt(0) == '1')
+                ? xor(divs, temp)
+                : xor(zeros, temp);
     }
 
     public static void main(String[] args) {
